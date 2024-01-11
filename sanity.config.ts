@@ -15,7 +15,7 @@ export default defineConfig({
   projectId,
   dataset,
   title: 'sanity-next14',
-  apiVersion: '2024-01-11',
+  apiVersion,
   // Add and edit the content schema in the './sanity/schema' folder
   schema,
   plugins: [
