@@ -1,4 +1,5 @@
 import { getProjects } from '../../sanity/sanity-utils';
+import Image from 'next/image';
 
 export default async function Home() {
   // since this is a static page, we can fetch the data at build time, no need for client side fetching and custom getStaticProps
@@ -12,6 +13,15 @@ export default async function Home() {
       {projects.map((project) => (
         <div key={project._id} className="flex flex-col items-center">
           <h1 className="text-2xl font-bold">{project.name}</h1>
+          {project.image && (
+            <Image
+              className="object-cover rounded-lg"
+              src={project.image}
+              alt={project.name}
+              width={200}
+              height={200}
+            />
+          )}
         </div>
       ))}
     </main>
