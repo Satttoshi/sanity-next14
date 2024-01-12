@@ -11,11 +11,6 @@ export const projectId = assertValue(
   'Missing environment variable: NEXT_PUBLIC_SANITY_PROJECT_ID',
 );
 
-export const revalidateSecret = assertValue(
-  process.env.SANITY_REVALIDATE_SECRET,
-  'Missing environment variable: SANITY_REVALIDATE_SECRET',
-);
-
 export const useCdn = false;
 
 function assertValue<T>(v: T | undefined, errorMessage: string): T {
