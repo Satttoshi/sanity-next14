@@ -48,6 +48,8 @@ export async function POST(req: NextRequest) {
       revalidateTag(`${body._type}:${body.slug}`);
     }
 
+    console.log('Revalidated:', body._type, body.slug);
+
     return NextResponse.json({
       status: 200,
       revalidated: true,
