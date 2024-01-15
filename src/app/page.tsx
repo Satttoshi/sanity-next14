@@ -1,10 +1,8 @@
 import Image from 'next/image';
 import { loadProjects } from '../../sanity/loaders/loadQuery';
-import logger from '../../logger';
 
 export default async function Home() {
   // since this is a static page, we can fetch the data at build time, no need for client side fetching and custom getStaticProps
-  logger.error('Winston logger is working');
   const projects = await loadProjects();
   if (!projects.data) {
     return null;

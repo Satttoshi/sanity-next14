@@ -25,6 +25,7 @@
 import { revalidateTag } from 'next/cache';
 import { type NextRequest, NextResponse } from 'next/server';
 import { parseBody } from 'next-sanity/webhook';
+import logger from '../../../../logger';
 
 const revalidateSecret = process.env.SANITY_REVALIDATE_SECRET;
 
@@ -48,7 +49,7 @@ export async function POST(req: NextRequest) {
       revalidateTag(`${body._type}:${body.slug}`);
     }
 
-    console.log('Revalidated:', body._type, body.slug);
+    logger.info(`Revalidated ${body._type} ${body.slug || ''}`);
 
     return NextResponse.json({
       status: 200,
