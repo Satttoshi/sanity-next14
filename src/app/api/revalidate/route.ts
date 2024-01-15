@@ -49,7 +49,11 @@ export async function POST(req: NextRequest) {
       revalidateTag(`${body._type}:${body.slug}`);
     }
 
-    logger.info(`Revalidated ${body._type} ${body.slug || ''}`);
+    logger.info(
+      `Revalidated ${body._type} ${
+        body.slug || ''
+      } sanity webhook received with request body: ${JSON.stringify(body)}`,
+    );
 
     return NextResponse.json({
       status: 200,
@@ -58,7 +62,7 @@ export async function POST(req: NextRequest) {
       body,
     });
   } catch (err: any) {
-    console.error(err);
+    logger.error(err);
     return new Response(err.message, { status: 500 });
   }
 }
