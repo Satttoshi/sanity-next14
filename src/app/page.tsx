@@ -5,7 +5,13 @@ export default async function Home() {
   // since this is a static page, we can fetch the data at build time, no need for client side fetching and custom getStaticProps
   const projects = await loadProjects();
   if (!projects.data) {
-    return <div>No entries in CMS</div>;
+    // Testing console in deployment
+    console.error('Error: No projects found');
+    console.warn('Warning: No projects found');
+    console.info('Info: No projects found');
+    console.debug('Debug: No projects found');
+    console.log('Log: No projects found');
+    return null;
   }
 
   return (
