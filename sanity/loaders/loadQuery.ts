@@ -53,6 +53,6 @@ export function loadProjects() {
   return loadQuery<Project[] | null>(
     projectsQuery,
     {},
-    { next: { tags: ['home', 'project:dragon'] } },
+    { next: { tags: ['home', 'project'] } },
   );
 }

@@ -46,8 +46,7 @@ export async function POST(req: NextRequest) {
 
     revalidateTag(body._type);
     if (body.slug) {
-      /* revalidateTag(`${body._type}:${body.slug}`);*/
-      revalidateTag(`project:dragon`);
+      revalidateTag(`${body._type}:${body.slug}`);
     }
 
     logger.info(
