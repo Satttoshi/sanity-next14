@@ -1,10 +1,10 @@
 import { createClient } from 'next-sanity';
 
-import { apiVersion, dataset } from '../env';
+import { apiVersion, dataset, projectId } from '../env';
 
 export const client = createClient({
   apiVersion,
   dataset,
-  projectId: '8c40hnwi',
+  projectId,
   useCdn: false,
 });
