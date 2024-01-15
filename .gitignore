@@ -38,4 +38,4 @@ next-env.d.ts
 # IDE
 /.idea
 
-/logs/combined.log
+/tmp/combined.log
